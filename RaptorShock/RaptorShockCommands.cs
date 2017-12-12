@@ -4,6 +4,8 @@ using Microsoft.Xna.Framework;
 using RaptorShock.Commands;
 using Terraria;
 using Terraria.ID;
+using Terraria.DataStructures;
+using System.Text;
 
 namespace RaptorShock
 {
@@ -287,10 +289,10 @@ namespace RaptorShock
         }
 
         [Command("ex", ".ex length",
-            HelpText = "Runs an exploit."]
+            HelpText = "Runs an exploit.")]
         public void SendExploit(int length)
         {
-            StringBuilder sb = new StirngBuilder();
+            StringBuilder sb = new StringBuilder();
             for (int i = 0; i < length; i++)
             {
                 sb.Append("a");
